@@ -1,0 +1,8 @@
+name: Dac
+author: Dams333
+version: 1.0.0
+main: ch.dams333.dac.Dac
+commands:
+  dac:
+    description: Commande d administration pour les dac
+    permission: dac.dac
