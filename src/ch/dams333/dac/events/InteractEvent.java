@@ -3,6 +3,7 @@ package ch.dams333.dac.events;
 import ch.dams333.dac.Dac;
 import ch.dams333.dac.deACoudre.DeACoudre;
 import ch.dams333.dac.deACoudre.SavedInventory;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -30,6 +31,7 @@ public class InteractEvent implements Listener {
         Player p = e.getPlayer();
         Block block = e.getClickedBlock();
         Action action = e.getAction();
+
 
         if(e.getHand() == EquipmentSlot.HAND && block != null && action == Action.RIGHT_CLICK_BLOCK){
             if(block.getType() == Material.OAK_SIGN || block.getType() == Material.OAK_WALL_SIGN){

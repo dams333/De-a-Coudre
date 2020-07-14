@@ -23,7 +23,7 @@ public class MoveEvent implements Listener {
         loc.add(0, 0.2, 0);
 
         if(loc.getBlock().getType() == Material.WATER){
-            if(main.gameManager.playerIsInGame(p)){
+            if(main.gameManager.playerIsInGame(p) && main.gameManager.isSauting(p)){
                 main.gameManager.playerHasJump(p, loc);
             }
         }

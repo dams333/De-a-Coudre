@@ -16,7 +16,7 @@ public class QuitEvent implements Listener {
     public void onQuit(PlayerQuitEvent e){
         Player p = e.getPlayer();
         if(main.gameManager.playerIsInGame(p)){
-
+            main.gameManager.quitPlayer(p);
         }
     }
 }

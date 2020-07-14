@@ -7,6 +7,8 @@ import org.bukkit.Material;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
+
 public class GameManager {
     Dac main;
     public GameManager(Dac dac) {
@@ -78,9 +80,10 @@ public class GameManager {
         for(Player p : main.inventorys.keySet()){
             if(game.getPlayers().contains(p)){
                 main.inventorys.get(p).apply(p);
-                main.inventorys.remove(p);
             }
         }
+
+        main.inventorys = new HashMap<>();
 
         main.gameSignManager.resetGameSign(main.gameSignManager.getSignFromDac(game.getDac()));
 
@@ -109,5 +112,9 @@ public class GameManager {
             }
         }
 
+    }
+
+    public boolean isSauting(Player p) {
+        return getGame(p).isSauting(p);
     }
 }

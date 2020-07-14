@@ -31,7 +31,7 @@ public class StatsEvent implements Listener {
             if(main.gameManager.playerIsInGame(p) || main.dacsManager.isInDac(p)){
                 e.setCancelled(true);
             }
-            if(main.gameManager.playerIsInGame(p)){
+            if(main.gameManager.playerIsInGame(p) && main.gameManager.isSauting(p)){
                 main.gameManager.playerDamage(p);
             }
         }

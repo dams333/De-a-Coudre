@@ -23,6 +23,8 @@ public class Game {
     private Player currentPlayer;
     private List<Location> replaced;
 
+    Player sauting;
+
     private Map<Player, Integer> maxLife = new HashMap<>();
 
     public Game(Dac main, List<Player> players, DeACoudre dac) {
@@ -189,9 +191,20 @@ public class Game {
     public void quited(Player p) {
         life.put(p, 0);
         for(Player pl : message){
-            pl.sendMessage(ChatColor.RED + p.getName() + " est mort définitevement car il a quitté le serveur !");
+            pl.sendMessage(ChatColor.RED + p.getName() + " est mort définitivement car il.elle a quitté le serveur !");
         }
 
         players.remove(p);
+
+
+        if (toJump.size() <= 0){
+            toJump.addAll(this.players);
+        }
+
+        upPlayer();
+    }
+
+    public boolean isSauting(Player p) {
+        return currentPlayer.getUniqueId().equals(p.getUniqueId());
     }
 }
